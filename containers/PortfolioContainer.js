@@ -1,7 +1,8 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import classnames from 'classnames';
+import { Hidden } from '@material-ui/core';
 import { withStyles } from '../util/styles';
 import PortfolioList from '../components/PortfolioList';
 import PortfolioViewer from '../components/PortfolioViewer';
@@ -48,12 +49,21 @@ class PortfolioContainer extends PureComponent {
     const { items, index, fetched } = this.state;
     return (
       <div className={classnames(classes.root, (!fetched ? classes.hidden : ''))}>
-        <PortfolioList
-          items={items}
-          callback={this.handleChangeIndex}
-          index={index}
-        />
-        <PortfolioViewer item={items[index]} />
+        { !items.length
+          ? null
+          : (
+            <Fragment>
+              <PortfolioList
+                items={items}
+                callback={this.handleChangeIndex}
+                index={index}
+              />
+              <Hidden smDown>
+                <PortfolioViewer item={items[index]} />
+              </Hidden>
+            </Fragment>
+          )
+        }
       </div>
     );
   }

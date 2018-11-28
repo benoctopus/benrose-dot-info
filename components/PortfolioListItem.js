@@ -70,4 +70,14 @@ const PortfolioListItem = ({
   </ListItem>
 );
 
+PortfolioListItem.propTypes = {
+  classes: PropTypes.object.isRequired,
+  name: PropTypes.string.isRequired,
+  repo: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+
+};
+
 export default withStyles(styles)(PortfolioListItem);
