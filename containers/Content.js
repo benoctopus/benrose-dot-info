@@ -11,12 +11,13 @@ import Header from '../components/Header';
 import MagicTextBox from './MagicTextBox';
 import LoadingScreen from '../components/LoadingScreen';
 
-const styles = {
+const styles = theme => ({
   contentRoot: {
     height: 'inherit',
-    padding: '1rem',
+    padding: '0 1rem',
     display: 'flex',
     flexFlow: 'column nowrap',
+    maxHeight: '100vw',
     zIndex: 1,
   },
   transitionBase: {
@@ -32,17 +33,29 @@ const styles = {
     margin: '2.5rem 0 0 0',
     maxWidth: '600px',
     paddingLeft: '.8rem',
+    [theme.breakpoints.down('sm')]: {
+      margin: '2.5rem auto',
+      paddingLeft: 0,
+      paddingBottom: '1rem',
+    },
     width: '100%',
   },
-};
+});
 
-class Home extends PureComponent {
+class Content extends PureComponent {
   static propTypes = {
     classes: PropTypes.object.isRequired,
+    imageBaseURL: PropTypes.string,
+    gradient: PropTypes.string,
+    children: PropTypes.node.isRequired,
   };
 
+  static defaultProps = {
+    imageBaseURL: '',
+    gradient: '',
+  }
+
   state = {
-    index: 0,
     imgLoaded: false,
   };
 
@@ -59,11 +72,8 @@ class Home extends PureComponent {
     return classes.transitionBase;
   }
 
-  setIndex = index => this.setState({ index });
-
   render = () => {
-    const { classes } = this.props;
-    const { index } = this.state;
+    const { classes, imageBaseURL, gradient, children } = this.props;
     const { imgLoaded } = this.state;
 
     return (
@@ -83,20 +93,17 @@ class Home extends PureComponent {
         <LoadingScreen on={!imgLoaded} duration={300} auxClasses={this.getHidden(true)} />
         <div className={classnames(classes.contentRoot, this.getHidden())}>
           <Header />
-          <MagicTextBox
-            layout={classes.textBoxLayout}
-            content={content(this.setIndex)}
-            index={index}
-          />
+          {children}
         </div>
         <ImageHandler
           auxClasses={classnames(this.getHidden())}
           done={this.handleImageLoad}
-          baseUrl="/static/splash"
+          baseUrl={imageBaseURL}
+          gradient={gradient}
         />
       </Fragment>
     );
   };
 }
 
-export default withStyles(styles)(Home);
+export default withStyles(styles)(Content);

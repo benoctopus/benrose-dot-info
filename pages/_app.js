@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import App, { Container } from 'next/app';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { WebpProvider } from '../util/webpContext';
 import Theme from '../util/Theme';
@@ -38,22 +37,15 @@ export default class CustomApp extends App {
       <Fragment>
         <div>
           <Container>
-            {/* <JssProvider
-              registry={this.pageContext.sheetsRegistry}
-              generateClassName={this.pageContext.generateClassName}
-            > */}
             <Reset />
             <WebpProvider>
               <MuiThemeProvider
                 theme={Theme}
                 sheetsManager={this.pageContext.sheetsManager}
               >
-                {/* <CssBaseline> */}
                 <Component {...pageProps} pageContext={this.pageContext} />
-                {/* </CssBaseline> */}
               </MuiThemeProvider>
             </WebpProvider>
-            {/* </JssProvider> */}
           </Container>
         </div>
       </Fragment>

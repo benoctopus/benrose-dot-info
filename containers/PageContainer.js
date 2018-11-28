@@ -3,17 +3,20 @@ import { withStyles } from '@material-ui/core';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-const styles = {
+const styles = ({ breakpoints }) => ({
   root: {
     // width: '100vw',
     height: '100vh',
     zIndex: 0,
     overflow: 'hidden',
+    [breakpoints.down('md')]: {
+      overflow: 'scroll',
+    },
   },
   default: {
     display: 'inline-block',
   },
-};
+});
 
 class PageContainer extends PureComponent {
   static propTypes = {

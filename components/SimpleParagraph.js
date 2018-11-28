@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { Typography } from '@material-ui/core';
 import { withStyles, prefix } from '../util/styles';
 
-const styles = {
+const styles = theme => ({
   root: {
     color: '#ffffff',
   },
@@ -12,19 +12,22 @@ const styles = {
     fontSize: '2.4rem',
     width: 'fit-content',
     letterSpacing: '.1rem',
-    // padding: '0 .2rem 0 0rem',
     fontFamily: "'Roboto Slab', sans-serif",
     lineHeight: '2.3rem',
-    borderBottom: '.001rem solid #ffffff',
+    borderBottom: '1px solid #ffffff',
   },
   paragraph: {
     fontFamily: "'Montserrat', sans-serif",
     fontSize: '1rem',
     paddingLeft: '.5rem',
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: 'none',
+      fontSize: '1.2rem',
+    },
     marginTop: '.8rem',
     lineHeight: '1.2',
   },
-};
+});
 
 const SimpleParagraph = (props) => {
   const {

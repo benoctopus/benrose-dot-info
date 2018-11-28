@@ -14,15 +14,17 @@ app
   .then(() => {
     const server = express();
 
-    server.use('/images/', express.static(path.join(__dirname, 'images')));
-    server.use('/css/', express.static(path.join(__dirname, 'static')));
-
     server.get('*', (req, res) => handle(req, res));
 
-    server.listen(PORT, (err) => {
-      if (err) throw err;
-      console.log(`ssr ready on ${URL || `http://localhost:${PORT}`}`);
-    });
+    if (process.env.tls) {
+      console.log('running https configuration');
+      require('./.tlsconfig')(server).listen(80, 443);
+    } else {
+      server.listen(PORT, (err) => {
+        if (err) throw err;
+        console.log(`ssr ready on ${URL || `http://localhost:${PORT}`}`);
+      });
+    }
   })
   .catch((ex) => {
     console.error(ex.stack);

@@ -1,0 +1,36 @@
+{
+    "items": [
+        {
+            "name": "Popitize",
+            "description": "placeholder",
+            "repo": "https://github.com/ucb-project-3/popitize",
+            "deployed": "http://popitize.com",
+            "thumbnail": "/static/popitize-thumb.png",
+            "image": "/static/popitize.jpg"
+        },
+        {
+            "name": "Popitize",
+            "description": "placeholder",
+            "repo": "https://github.com/ucb-project-3/popitize",
+            "deployed": "http://popitize.com",
+            "thumbnail": "/static/popitize-thumb.png",
+            "image": "/static/popitize.jpg"
+        },
+        {
+            "name": "Popitize",
+            "description": "placeholder",
+            "repo": "https://github.com/ucb-project-3/popitize",
+            "deployed": "http://popitize.com",
+            "thumbnail": "/static/popitize-thumb.png",
+            "image": "/static/popitize.jpg"
+        },
+        {
+            "name": "Popitize",
+            "description": "placeholder",
+            "repo": "https://github.com/ucb-project-3/popitize",
+            "deployed": "http://popitize.com",
+            "thumbnail": "/static/popitize-thumb.png",
+            "image": "/static/popitize.jpg"
+        }
+    ]
+}

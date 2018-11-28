@@ -56,6 +56,12 @@ table {
   animation: loading-gradient 17s ease infinite;
 }
 
+a:link, a:visited, a:active, a:visited { 
+    color: 'white';
+    text-decoration: none;
+    cursor: pointer;
+}
+
 @-webkit-keyframes loading-gradient {
     0%{background-position:0% 22%}
     50%{background-position:100% 79%}
@@ -79,16 +85,22 @@ table {
 
 html { font-size: calc(.7em + .5vw); background-color: black}
 
-@media only screen and (max-width: 480px) {
-	html { font-size: calc(1em + .5vw); }
-}
 
+
+@media only screen and (max-width: 1280px) {
+	html { font-size: calc(.85em + .5vw); }
+}
+@media only screen and (max-width: 960px) {
+	html { font-size: calc(.85em + .5vw); }
+}
+@media only screen and (max-width: 840px) {
+	html { font-size: calc(.82em + .5vw); }
+}
 @media only screen and (max-width: 600px) {
+	html { font-size: calc(.8em + .5vw); }
+
 }
-@media only screen and (min-width: 840px) {
-}
-@media only screen and (min-width: 960px) {
-@media only screen and (min-width: 1280px) {
+@media only screen and (max-width: 480px) {
 }
 
 	`}

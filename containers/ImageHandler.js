@@ -17,6 +17,7 @@ class ImageHandler extends PureComponent {
     this.state = {
       imageUrl: '',
     };
+
     this.getImage = this._getImage();
   }
 
@@ -24,36 +25,39 @@ class ImageHandler extends PureComponent {
     let fetched = false;
     return () => {
       const webp = this.context;
-
       if (!fetched && webp) {
         (async () => {
-          const { baseUrl, done } = this.props;
-          const postfix = webp > 1 ? 'webp' : 'jpg';
-          const contentType = `image/${postfix}`;
-
-          const options = {
-            url: `${baseUrl}.${postfix}`,
-            method: 'get',
-            responseType: 'blob',
-          };
-
-          try {
-            let imageUrl;
-            const { data } = await axios(options);
-            // const bin = Buffer.from(data).toString('base64');
-            // console.log(bin);
-            const reader = new FileReader();
-            reader.readAsDataURL(data);
-            reader.onload = () => {
-              imageUrl = reader.result;
-              console.log(imageUrl);
-              this.setState({ imageUrl }, done);
-            };
-          } catch (err) {
-            console.log(err);
-            this.setState({ imageUrl: '' }, done);
-          } finally {
+          const { baseUrl, gradient, done } = this.props;
+          if (gradient) {
             fetched = true;
+            setTimeout(() => {
+              this.setState({ imageUrl: gradient }, done);
+            }, 100);
+          } else {
+            const postfix = webp > 1 ? 'webp' : 'jpg';
+            const contentType = `image/${postfix}`;
+
+            const options = {
+              url: `${baseUrl}.${postfix}`,
+              method: 'get',
+              responseType: 'blob',
+            };
+
+            try {
+              let imageUrl;
+              const { data } = await axios(options);
+              const reader = new FileReader();
+              reader.readAsDataURL(data);
+              reader.onload = () => {
+                imageUrl = `url(${reader.result})`;
+                this.setState({ imageUrl }, done);
+              };
+            } catch (err) {
+              console.log(err);
+              this.setState({ imageUrl: '' }, done);
+            } finally {
+              fetched = true;
+            }
           }
         })();
       }

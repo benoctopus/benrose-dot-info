@@ -5,7 +5,7 @@ import { axios } from 'axios';
 import fetch from 'isomorphic-unfetch';
 import PageContainer from '../containers/PageContainer';
 import Layout from '../containers/Layout';
-import MagicTextController from '../containers/MagicTextController';
+import PortfolioContainer from '../containers/PortfolioContainer';
 
 
 const styles = {
@@ -21,8 +21,11 @@ const Index = (props) => {
   } = props;
 
   return (
-    <Layout layout={layout} imageBaseURL="/static/splash">
-      <MagicTextController />
+    <Layout
+      layout={layout}
+      imageBaseURL="/static/portfolio-splash"
+    >
+      <PortfolioContainer />
     </Layout>
   );
 };

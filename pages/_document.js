@@ -12,6 +12,21 @@ export default class AppDocument extends Document {
         <Head>
           <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Pacifico"
+            rel="preload"
+            as="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css?family=Montserrat"
+            rel="preload"
+            as="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto+Slab"
+            rel="preload"
+            as="stylesheet"
+          />
         </Head>
         <JssProvider registry={sheets}>
           <Page {...props} />

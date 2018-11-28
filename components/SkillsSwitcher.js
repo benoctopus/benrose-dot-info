@@ -40,7 +40,7 @@ const lists = [
     ],
   },
   {
-    title: 'Data Persistence',
+    title: 'Data',
     content: [
       'MySQL',
       'PostgreSQL',
@@ -73,7 +73,7 @@ const styles = {
     transition: 'opacity 300ms, font-size 300ms',
     opacity: '0.7',
     fontSize: '1rem',
-
+    cursor: 'pointer',
   },
   active: {
     opacity: '1',
@@ -88,7 +88,7 @@ const styles = {
   },
   titleBar: {
     display: 'flex',
-    flexFlow: 'row nowrap',
+    flexFlow: 'row wrap',
     alignItems: 'flex-end',
   },
 };

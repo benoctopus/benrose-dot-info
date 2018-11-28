@@ -26,6 +26,8 @@ const styles = ({ palette, breakpoints }) => ({
     // backgroundImage: 'url(/static/splash.webp), url(/static/splash.jpg)',
     filter: 'blur(0.5px)',
     backgroundPosition: 'left top',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
   },
 });
 
@@ -34,8 +36,8 @@ const ImageBackground = (props) => {
 
   return (
     <Fragment>
-      <CardMedia
-        image={imageUrl}
+      <div
+        style={{ backgroundImage: imageUrl }}
         className={classnames(classes.root, classes.image, auxClasses)}
       />
       <div className={classnames(classes.root, classes.overlay, auxClasses)} />
