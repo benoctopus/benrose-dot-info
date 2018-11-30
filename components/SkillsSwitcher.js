@@ -74,6 +74,8 @@ const styles = {
     opacity: '0.7',
     fontSize: '1rem',
     cursor: 'pointer',
+    margin: 0,
+    padding: '.4rem',
   },
   active: {
     opacity: '1',
@@ -90,6 +92,10 @@ const styles = {
     display: 'flex',
     flexFlow: 'row wrap',
     alignItems: 'flex-end',
+    paddingLeft: '1rem',
+  },
+  listItem: {
+    padding: 0,
   },
 };
 
@@ -115,7 +121,7 @@ class SkillsSwitcher extends PureComponent {
       const len = content.length;
       for (let j = 0; j < len; j += 1) {
         items.push(
-          <ListItem>
+          <ListItem className={classes.listItem}>
             <Typography className={textClass} component="p">
               {`- ${content[j]}`}
             </Typography>

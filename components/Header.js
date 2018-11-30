@@ -11,7 +11,7 @@ const styles = theme => ({
     flexFlow: 'row nowrap',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    height: '6rem',
+    height: '6rem !important',
     [theme.breakpoints.down('xs')]: {
       padding: '1rem 0 0 0',
     },

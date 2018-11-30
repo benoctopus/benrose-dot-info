@@ -2,19 +2,19 @@
     "items": [
         {
             "name": "Popitize",
-            "description": "placeholder",
+            "description": "Popitize is a full stack web app that provides a peer space sharing platform for individuals & SMBs to locate and rent space to host their pop-up businesses. With the rise of pop-up shops recently we were passionate about creating this app because it adds value by supporting smaller local businesses (no fixed costs of buying property) and larger businesses gain revenue and efficiencies from their unused property space.",
             "repo": "https://github.com/ucb-project-3/popitize",
             "deployed": "http://popitize.com",
             "thumbnail": "/static/popitize-thumb.png",
             "image": "/static/popitize.jpg"
         },
         {
-            "name": "Popitize",
-            "description": "placeholder",
-            "repo": "https://github.com/ucb-project-3/popitize",
-            "deployed": "http://popitize.com",
-            "thumbnail": "/static/popitize-thumb.png",
-            "image": "/static/popitize.jpg"
+            "name": "This Site",
+            "description": "I had quite a bit of fun designing this page, so much so that I figured it deserved a spot in the limelight! The project revolves almost entirely around front end design, which is a bit unusual for me as I usually choose personal projects that pose a more well rounded challenge. My goal here was to design an aesthetically pleasing, isomorphic, and rather simple website using React to represent my personal brand on the web. On that end, I’m more than pleased with how it turned out.",
+            "repo": "https://github.com/benoctopus/benrose-dot-info",
+            "deployed": "https://benrose.info",
+            "image": "/static/splash.jpg",
+            "thumbnail": "/static/logo.svg"
         },
         {
             "name": "Popitize",

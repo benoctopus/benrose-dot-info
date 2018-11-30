@@ -6,11 +6,11 @@ import { withStyles } from '../util/styles';
 
 const styles = theme => ({
   textBoxLayout: {
-    margin: '2.5rem 0 0 0',
+    // margin: '2.5rem 0 0 0',
     maxWidth: '600px',
-    paddingLeft: '.8rem',
+    // padding: '2rem 0 0 .8rem',
     [theme.breakpoints.down('sm')]: {
-      margin: '2.5rem auto',
+      // margin: '2.5rem auto 0 auto',
       paddingLeft: 0,
       paddingBottom: '1rem',
     },

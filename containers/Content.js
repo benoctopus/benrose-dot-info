@@ -13,11 +13,11 @@ import LoadingScreen from '../components/LoadingScreen';
 
 const styles = theme => ({
   contentRoot: {
-    height: 'inherit',
+    // position: 'absolute',
     padding: '0 1rem',
-    display: 'flex',
-    flexFlow: 'column nowrap',
-    maxHeight: '100vw',
+    // display: 'flex',
+    // flexFlow: 'column nowrap',
+    height: '100vh',
     zIndex: 1,
   },
   transitionBase: {
@@ -34,7 +34,7 @@ const styles = theme => ({
     maxWidth: '600px',
     paddingLeft: '.8rem',
     [theme.breakpoints.down('sm')]: {
-      margin: '2.5rem auto',
+      // margin: '0',
       paddingLeft: 0,
       paddingBottom: '1rem',
     },

@@ -10,14 +10,16 @@ const styles = theme => ({
     flexFlow: 'row nowrap',
     backgroundColor: '#00000000',
     transition: 'opacity 250ms, background-color 250ms',
-    [theme.breakpoints.down('sm')]: {
-      flexFlow: 'column nowrap',
-    },
-    opacity: '0.80',
-    '&:hover': {
-      cursor: 'pointer',
-      backgroundColor: '#FFFFFF1A',
-      opacity: '1',
+    // [theme.breakpoints.down('sm')]: {
+    //   flexFlow: 'column nowrap',
+    // },
+    [theme.breakpoints.up('md')]: {
+      opacity: '0.80',
+      '&:hover': {
+        cursor: 'pointer',
+        backgroundColor: '#FFFFFF1A',
+        opacity: '1',
+      },
     },
   },
   thumbnail: {
@@ -28,6 +30,7 @@ const styles = theme => ({
     display: 'flex',
     flexFlow: 'column nowrap',
     paddingLeft: '.8rem',
+    flexGrow: 1,
   },
   title: {
     fontSize: '1.3rem',
@@ -41,8 +44,10 @@ const styles = theme => ({
     color: 'white',
   },
   active: {
-    backgroundColor: '#FFFFFF40 !important',
-    opacity: '1 !important',
+    [theme.breakpoints.up('md')]: {
+      backgroundColor: '#FFFFFF40 !important',
+      opacity: '1 !important',
+    },
   },
 
 });

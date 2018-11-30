@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 const styles = ({ breakpoints }) => ({
   root: {
     // width: '100vw',
+    position: 'absolute',
+    width: '100vw',
     height: '100vh',
     zIndex: 0,
     overflow: 'hidden',

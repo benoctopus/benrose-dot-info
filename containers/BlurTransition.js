@@ -19,7 +19,7 @@ const styles = {
   },
   blur: {
     opacity: '0.6',
-    filter: 'blur(20px)',
+    filter: 'blur(30px)',
     Webkitfilter: 'blur(20px)',
   },
 };
@@ -39,12 +39,6 @@ class BlurTransition extends PureComponent {
     duration: 300,
     done: () => null,
   };
-
-  componentDidMount = () => {
-    if (process.browser) {
-      const { initial } = this.props;
-    }
-  }
 
   componentDidUpdate = ({ on: pron }) => {
     const { on, done, duration } = this.props;
@@ -76,8 +70,8 @@ class BlurTransition extends PureComponent {
           this.getContainerClass()
         )}
         style={{
-          transition: `filter ${duration}ms, opacity ${duration}`,
-          WebkitTransition: `-webkit-filter ${duration}ms, opacity${duration}`,
+          transition: `filter ${duration}ms ease, opacity ${duration}ms ease`,
+          WebkitTransition: `-webkit-filter ${duration}ms ease, opacity ${duration}ms ease`,
 
         }}
       >
